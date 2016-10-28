@@ -1,44 +1,26 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "RESTful API for the Denner Public",
+    "description" : "RESTful API for Denner's open data",
     "version" : "1.0.0",
-    "title" : "Denner Public",
+    "title" : "Denner Public Web Service",
     "contact" : {
       "name" : "DETAIL NET",
       "email" : "support+denner-public-api@detailnet.ch"
     }
   },
-  "host" : "denner-public-api.detailnet.ch",
-  "basePath" : "/v1",
+  "host" : "denner-public-api-v1.detailnet.ch",
   "schemes" : [ "https" ],
   "consumes" : [ "application/json" ],
   "produces" : [ "application/json" ],
   "paths" : {
     "/online-articles" : {
       "get" : {
-        "tags" : [ "online" ],
+        "tags" : [ "promotion" ],
         "summary" : "List all online articles",
-        "description" : "Use this operation to get a list of all articles currently advertised.\n",
-        "operationId" : "listPublicOnlineArticles",
-        "parameters" : [ {
-          "name" : "page",
-          "in" : "query",
-          "description" : "The page number. Default: 1\n",
-          "required" : false,
-          "type" : "integer",
-          "default" : 1,
-          "minimum" : 0.0,
-          "format" : "int32"
-        }, {
-          "name" : "page_size",
-          "in" : "query",
-          "description" : "The page size. Default: -1 (no limit)\n",
-          "required" : false,
-          "type" : "integer",
-          "default" : -1,
-          "format" : "int32"
-        } ],
+        "description" : "Use this operation to get a list of all articles currently in promotion and advertised in the online channels.\n",
+        "operationId" : "listOnlineArticles",
+        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "Successful listing",
@@ -47,9 +29,6 @@
             },
             "examples" : {
               "application/json" : {
-                "page_count" : 1,
-                "page_size" : 1,
-                "total_items" : 1,
                 "online_articles" : [ {
                   "id" : "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6",
                   "article_id" : "051273",
@@ -96,16 +75,6 @@
                   }, {
                     "locale" : "it",
                     "value" : "Confronto con la concorrenza"
-                  } ],
-                  "promotion_info" : [ {
-                    "locale" : "de",
-                    "value" : "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
-                  }, {
-                    "locale" : "fr",
-                    "value" : "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
-                  }, {
-                    "locale" : "it",
-                    "value" : "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
                   } ],
                   "quantity" : 6,
                   "validity" : {
@@ -154,33 +123,32 @@
                       "value" : "..."
                     } ]
                   },
-                  "promoted" : true,
                   "compared" : true,
                   "online_group" : {
-                    "id" : "671988cc-ca5f-484e-8db8-23a65ea0044a",
-                    "code" : 4003,
+                    "id" : "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee",
+                    "code" : "2-9",
                     "title" : [ {
                       "locale" : "de",
-                      "value" : "Wein"
+                      "value" : "Wein/Champagner"
                     }, {
                       "locale" : "fr",
-                      "value" : "Vins"
+                      "value" : "Vins/champagnes"
                     }, {
                       "locale" : "it",
-                      "value" : "Vini"
+                      "value" : "Vino/champagne"
                     } ],
                     "parent" : {
-                      "id" : "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
-                      "code" : 4001,
+                      "id" : "8fd653c3-a86b-4529-bbb5-58d06919d484",
+                      "code" : 2,
                       "title" : [ {
                         "locale" : "de",
-                        "value" : "Tafelgetränke und Mineralwasser"
+                        "value" : "Getränke"
                       }, {
                         "locale" : "fr",
-                        "value" : "Boissons table et eau minérale"
+                        "value" : "Boissons"
                       }, {
                         "locale" : "it",
-                        "value" : "Bevande da tavola e acque minerali"
+                        "value" : "Bevande"
                       } ]
                     }
                   },
@@ -497,7 +465,7 @@
         "id" : {
           "type" : "integer",
           "format" : "int32",
-          "description" : "Navision wine type code",
+          "description" : "Denner wine type code",
           "minimum" : 0.0
         },
         "title" : {
@@ -513,7 +481,7 @@
         },
         "article_id" : {
           "type" : "string",
-          "description" : "Navision article code",
+          "description" : "Denner article code",
           "pattern" : "/^\\d{6}$/"
         },
         "title" : {
@@ -528,9 +496,6 @@
         "price_info" : {
           "$ref" : "#/definitions/Translations"
         },
-        "promotion_info" : {
-          "$ref" : "#/definitions/Translations"
-        },
         "quantity" : {
           "$ref" : "#/definitions/Quantity"
         },
@@ -539,10 +504,6 @@
         },
         "availability_limitations" : {
           "$ref" : "#/definitions/AvailabilityLimitations"
-        },
-        "promoted" : {
-          "type" : "boolean",
-          "description" : "Is it a promoted article (should be displayed with full information)?"
         },
         "compared" : {
           "type" : "boolean",
@@ -568,7 +529,7 @@
         "code" : {
           "type" : "integer",
           "format" : "int32",
-          "description" : "Navision online group code"
+          "description" : "Denner online group code"
         },
         "title" : {
           "$ref" : "#/definitions/Translations"
@@ -593,46 +554,10 @@
     "PublicOnlineArticlesResponse" : {
       "type" : "object",
       "properties" : {
-        "page_count" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "The number of pages"
-        },
-        "page_size" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "The page size"
-        },
-        "total_items" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "The number of items on all pages"
-        },
-        "articles" : {
+        "online_articles" : {
           "$ref" : "#/definitions/PublicOnlineArticles"
         }
       }
-    }
-  },
-  "parameters" : {
-    "PageParam" : {
-      "name" : "page",
-      "in" : "query",
-      "description" : "The page number. Default: 1\n",
-      "required" : false,
-      "type" : "integer",
-      "default" : 1,
-      "minimum" : 0.0,
-      "format" : "int32"
-    },
-    "PageSizeParam" : {
-      "name" : "page_size",
-      "in" : "query",
-      "description" : "The page size. Default: -1 (no limit)\n",
-      "required" : false,
-      "type" : "integer",
-      "default" : -1,
-      "format" : "int32"
     }
   }
 }
