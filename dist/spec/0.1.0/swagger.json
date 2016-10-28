@@ -1,0 +1,563 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "RESTful API for Denner's open data",
+    "version" : "1.0.0",
+    "title" : "Denner Public Web Service",
+    "contact" : {
+      "name" : "DETAIL NET",
+      "email" : "support+denner-public-api@detailnet.ch"
+    }
+  },
+  "host" : "denner-public-api-v1.detailnet.ch",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/online-articles" : {
+      "get" : {
+        "tags" : [ "promotion" ],
+        "summary" : "List all online articles",
+        "description" : "Use this operation to get a list of all articles currently in promotion and advertised in the online channels.\n",
+        "operationId" : "listOnlineArticles",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "schema" : {
+              "$ref" : "#/definitions/PublicOnlineArticlesResponse"
+            },
+            "examples" : {
+              "application/json" : {
+                "online_articles" : [ {
+                  "id" : "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6",
+                  "article_id" : "051273",
+                  "title" : [ {
+                    "locale" : "de",
+                    "value" : "Mandorla Primitivo di Puglia IGT"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "Mandorla Primitivo di Puglia IGT"
+                  }, {
+                    "locale" : "it",
+                    "value" : "Mandorla Primitivo di Puglia IGT"
+                  } ],
+                  "description" : [ {
+                    "locale" : "de",
+                    "value" : "2013, Apulien, Italien, 6 x 75 cl"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "2013, les Pouilles, Italie, 6 x 75 cl"
+                  }, {
+                    "locale" : "it",
+                    "value" : "2013, Puglia, Italia, 6 x 75 cl"
+                  } ],
+                  "prices" : {
+                    "sales" : 59.4,
+                    "instead" : 68.4,
+                    "base" : 1.32,
+                    "by_quantity" : [ {
+                      "quantity" : 1,
+                      "sales" : 9.9,
+                      "instead" : 11.4
+                    }, {
+                      "quantity" : 6,
+                      "sales" : 59.4,
+                      "instead" : 68.4
+                    } ]
+                  },
+                  "price_info" : [ {
+                    "locale" : "de",
+                    "value" : "Konkurrenzvergleich"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "Comparaison concurrentielle"
+                  }, {
+                    "locale" : "it",
+                    "value" : "Confronto con la concorrenza"
+                  } ],
+                  "quantity" : 6,
+                  "validity" : {
+                    "from" : "2015-06-23",
+                    "to" : "2015-06-29",
+                    "short_text" : [ {
+                      "locale" : "de",
+                      "value" : "Gültig von 23.06.–29.06."
+                    }, {
+                      "locale" : "fr",
+                      "value" : "..."
+                    }, {
+                      "locale" : "it",
+                      "value" : "..."
+                    } ],
+                    "long_text" : [ {
+                      "locale" : "de",
+                      "value" : "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "..."
+                    }, {
+                      "locale" : "it",
+                      "value" : "..."
+                    } ]
+                  },
+                  "availability_limitations" : {
+                    "region" : [ {
+                      "locale" : "de",
+                      "value" : "Nur in der deutschen und französischen Schweiz erhältlich"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "..."
+                    }, {
+                      "locale" : "it",
+                      "value" : "..."
+                    } ],
+                    "store" : [ {
+                      "locale" : "de",
+                      "value" : "Nur in Filialen mit Frischprodukten erhältlich"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Disponible(s) uniquement dans les succursales aves des produits frais"
+                    }, {
+                      "locale" : "it",
+                      "value" : "..."
+                    } ]
+                  },
+                  "compared" : true,
+                  "online_group" : {
+                    "id" : "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee",
+                    "code" : "2-9",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Wein/Champagner"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Vins/champagnes"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Vino/champagne"
+                    } ],
+                    "parent" : {
+                      "id" : "8fd653c3-a86b-4529-bbb5-58d06919d484",
+                      "code" : 2,
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Getränke"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Boissons"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Bevande"
+                      } ]
+                    }
+                  },
+                  "packshot" : {
+                    "id" : "5983a33d-ac61-49a8-a836-43259e78e9d0",
+                    "cdn_url" : "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                  },
+                  "wine" : {
+                    "country" : {
+                      "id" : "IT",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Italien"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Italie"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Italia"
+                      } ]
+                    },
+                    "region" : {
+                      "id" : "b19c42bf-ed78-46ff-ad6f-fc688a059e6a",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Apulien"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Les Pouilles"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Puglia"
+                      } ]
+                    },
+                    "type" : {
+                      "id" : 2,
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Rotwein"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Vin rouge"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Vino rosso"
+                      } ]
+                    },
+                    "year" : 2013,
+                    "fits_with" : [ {
+                      "locale" : "de",
+                      "value" : "Pasta, Fleisch mit würzigen Saucen"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Pâtes, viande aux sauces relevées"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Pasta, carni accompagnate da salse aromatiche"
+                    } ],
+                    "varietal" : [ {
+                      "locale" : "de",
+                      "value" : "Primitivo"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Primitivo"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Primitivo"
+                    } ],
+                    "character" : [ {
+                      "locale" : "de",
+                      "value" : "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                    }, {
+                      "locale" : "it",
+                      "value" : "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    } ],
+                    "temperature" : [ {
+                      "locale" : "de",
+                      "value" : "16-18 °C"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "16-18 °C"
+                    }, {
+                      "locale" : "it",
+                      "value" : "16-18 °C"
+                    } ],
+                    "awards" : [ {
+                      "locale" : "de",
+                      "value" : ""
+                    }, {
+                      "locale" : "fr",
+                      "value" : ""
+                    }, {
+                      "locale" : "it",
+                      "value" : ""
+                    } ],
+                    "storage" : [ {
+                      "locale" : "de",
+                      "value" : "3 Jahre"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "3 ans"
+                    }, {
+                      "locale" : "it",
+                      "value" : "3 anni"
+                    } ]
+                  }
+                } ]
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "appKey" : {
+      "type" : "apiKey",
+      "name" : "App-Key",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "UUIDv4" : {
+      "type" : "string",
+      "description" : "Unique identifier"
+    },
+    "Locale" : {
+      "type" : "string",
+      "description" : "Locale"
+    },
+    "Translation" : {
+      "type" : "object",
+      "properties" : {
+        "locale" : {
+          "$ref" : "#/definitions/Locale"
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "Translated text value"
+        }
+      }
+    },
+    "Url" : {
+      "type" : "string",
+      "description" : "Web URL address"
+    },
+    "PublicCountry" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "Country code definition from ISO 3166",
+          "pattern" : "/^[A-Z]{2}$/"
+        },
+        "title" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      },
+      "description" : "Country"
+    },
+    "Date" : {
+      "type" : "string",
+      "format" : "date",
+      "description" : "Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)"
+    },
+    "Year" : {
+      "type" : "integer",
+      "format" : "int32",
+      "description" : "Year"
+    },
+    "Price" : {
+      "type" : "number",
+      "format" : "float",
+      "description" : "Price in CHF"
+    },
+    "Quantity" : {
+      "type" : "integer",
+      "format" : "int32",
+      "description" : "Quantity"
+    },
+    "ArticleValidity" : {
+      "type" : "object",
+      "properties" : {
+        "from" : {
+          "$ref" : "#/definitions/Date"
+        },
+        "to" : {
+          "$ref" : "#/definitions/Date"
+        },
+        "short_text" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "long_text" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      },
+      "description" : "Article validity based on dates (from/to) and corresponding texts (short and long version)"
+    },
+    "AvailabilityLimitations" : {
+      "type" : "object",
+      "properties" : {
+        "region" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "store" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      },
+      "description" : "Texts for information about limited availability"
+    },
+    "PublicArticlePrices" : {
+      "type" : "object",
+      "properties" : {
+        "sales" : {
+          "$ref" : "#/definitions/Price"
+        },
+        "instead" : {
+          "$ref" : "#/definitions/Price"
+        },
+        "base" : {
+          "$ref" : "#/definitions/Price"
+        },
+        "by_quantity" : {
+          "$ref" : "#/definitions/PublicQuantityPrices"
+        }
+      }
+    },
+    "PublicQuantityPrices" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/PublicQuantityPrice"
+      }
+    },
+    "PublicQuantityPrice" : {
+      "type" : "object",
+      "properties" : {
+        "quantity" : {
+          "$ref" : "#/definitions/Quantity"
+        },
+        "sales" : {
+          "$ref" : "#/definitions/Price"
+        },
+        "instead" : {
+          "$ref" : "#/definitions/Price"
+        }
+      }
+    },
+    "PublicPackshot" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "$ref" : "#/definitions/UUIDv4"
+        },
+        "cdn_url" : {
+          "$ref" : "#/definitions/Url"
+        }
+      }
+    },
+    "PublicArticleWine" : {
+      "type" : "object",
+      "properties" : {
+        "country" : {
+          "$ref" : "#/definitions/PublicCountry"
+        },
+        "region" : {
+          "$ref" : "#/definitions/Region"
+        },
+        "type" : {
+          "$ref" : "#/definitions/WineType"
+        },
+        "year" : {
+          "$ref" : "#/definitions/Year"
+        },
+        "fits_with" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "varietal" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "character" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "temperature" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "awards" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "storage" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      }
+    },
+    "Region" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "$ref" : "#/definitions/UUIDv4"
+        },
+        "title" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      }
+    },
+    "WineType" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Denner wine type code",
+          "minimum" : 0.0
+        },
+        "title" : {
+          "$ref" : "#/definitions/Translations"
+        }
+      }
+    },
+    "PublicOnlineArticle" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "$ref" : "#/definitions/UUIDv4"
+        },
+        "article_id" : {
+          "type" : "string",
+          "description" : "Denner article code",
+          "pattern" : "/^\\d{6}$/"
+        },
+        "title" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "description" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "prices" : {
+          "$ref" : "#/definitions/PublicArticlePrices"
+        },
+        "price_info" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "quantity" : {
+          "$ref" : "#/definitions/Quantity"
+        },
+        "validity" : {
+          "$ref" : "#/definitions/ArticleValidity"
+        },
+        "availability_limitations" : {
+          "$ref" : "#/definitions/AvailabilityLimitations"
+        },
+        "compared" : {
+          "type" : "boolean",
+          "description" : "Is the article's price compared to an offer from an other company?"
+        },
+        "online_group" : {
+          "$ref" : "#/definitions/PublicAssignedOnlineGroup"
+        },
+        "packshot" : {
+          "$ref" : "#/definitions/PublicPackshot"
+        },
+        "wine" : {
+          "$ref" : "#/definitions/PublicArticleWine"
+        }
+      }
+    },
+    "PublicAssignedOnlineGroup" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "$ref" : "#/definitions/UUIDv4"
+        },
+        "code" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Denner online group code"
+        },
+        "title" : {
+          "$ref" : "#/definitions/Translations"
+        },
+        "parent" : {
+          "$ref" : "#/definitions/PublicAssignedOnlineGroup"
+        }
+      }
+    },
+    "Translations" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Translation"
+      }
+    },
+    "PublicOnlineArticles" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/PublicOnlineArticle"
+      }
+    },
+    "PublicOnlineArticlesResponse" : {
+      "type" : "object",
+      "properties" : {
+        "online_articles" : {
+          "$ref" : "#/definitions/PublicOnlineArticles"
+        }
+      }
+    }
+  }
+}
