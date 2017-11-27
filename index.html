@@ -63,7 +63,7 @@
           });
 
 //          addApiKeyAuthorization('app_id', 'App-ID');
-          addApiKeyAuthorization('app_key', 'App-Key');
+          addApiKeyAuthorization('appKey', 'App-Key');
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -80,9 +80,6 @@
             var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(header, value, 'header');
             window.swaggerUi.api.clientAuthorizations.add(key, apiKeyAuth);
             log('Added auth header "' + header + ': ' + value + '"');
-
-            var tokenAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Token " + value, "header");
-            window.swaggerUi.api.clientAuthorizations.add(key, tokenAuth);
         }
       }
 

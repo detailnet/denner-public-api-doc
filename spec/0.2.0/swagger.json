@@ -271,7 +271,7 @@
           }
         },
         "security" : [ {
-          "App-Key" : [ ]
+          "appKey" : [ ]
         } ]
       }
     },
@@ -410,13 +410,13 @@
           }
         },
         "security" : [ {
-          "App-Key" : [ ]
+          "appKey" : [ ]
         } ]
       }
     }
   },
   "securityDefinitions" : {
-    "App-Key" : {
+    "appKey" : {
       "type" : "apiKey",
       "name" : "App-Key",
       "in" : "header"
