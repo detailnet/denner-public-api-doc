@@ -80,6 +80,9 @@
             var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(header, value, 'header');
             window.swaggerUi.api.clientAuthorizations.add(key, apiKeyAuth);
             log('Added auth header "' + header + ': ' + value + '"');
+
+            var tokenAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Token " + value, "header");
+            window.swaggerUi.api.clientAuthorizations.add(key, tokenAuth);
         }
       }
 
