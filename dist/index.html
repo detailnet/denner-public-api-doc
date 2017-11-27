@@ -74,11 +74,12 @@
       });
 
       function addApiKeyAuthorization(key, header){
-        var value = encodeURIComponent($('#' + key)[0].value);
+        var value = encodeURIComponent($('#' + key)[0].value),
+            name = $('#' + key)[0].name;
 
         if (value && value.trim() != '') {
             var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(header, value, 'header');
-            window.swaggerUi.api.clientAuthorizations.add(key, apiKeyAuth);
+            window.swaggerUi.api.clientAuthorizations.add(name, apiKeyAuth);
             log('Added auth header "' + header + ': ' + value + '"');
         }
       }
